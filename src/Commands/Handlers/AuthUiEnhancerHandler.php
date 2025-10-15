@@ -12,5 +12,4 @@ class AuthUiEnhancerHandler extends Command
         exec('composer require diogogpinto/filament-auth-ui-enhancer');
         $this->info('✅ filament-auth-ui-enhancer plugin installed successfully.');
     }
-
 }

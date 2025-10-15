@@ -2,9 +2,9 @@
 
 namespace Softok2\FilamentStarterKit;
 
+use Softok2\FilamentStarterKit\Commands\FilamentStarterKitCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Softok2\FilamentStarterKit\Commands\FilamentStarterKitCommand;
 
 class FilamentStarterKitServiceProvider extends PackageServiceProvider
 {

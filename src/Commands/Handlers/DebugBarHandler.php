@@ -6,7 +6,6 @@ use Illuminate\Console\Command;
 
 class DebugBarHandler extends Command
 {
-
     public function handle(): void
     {
         $this->comment('Installing Laravel Debugbar...');

@@ -17,7 +17,7 @@ class PintHandler extends Command
         try {
             $this->copyConfig();
         } catch (FileNotFoundException $e) {
-            $this->error('❌ Failed to copy pint.json: ' . $e->getMessage());
+            $this->error('❌ Failed to copy pint.json: '.$e->getMessage());
         }
 
     }
@@ -27,11 +27,11 @@ class PintHandler extends Command
      */
     private function copyConfig(): void
     {
-        $stubPath = dirname(__DIR__, 3) . '/stubs/pint.json.stub';
+        $stubPath = dirname(__DIR__, 3).'/stubs/pint.json.stub';
 
         $destination = base_path('pint.json');
 
-        if (!File::exists($destination)) {
+        if (! File::exists($destination)) {
             $stubContent = File::get($stubPath);
 
             File::put($destination, $stubContent);

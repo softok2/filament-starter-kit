@@ -12,7 +12,7 @@ class TelescopeHandler extends Command
         $this->comment('Installing Telescope...');
         exec('composer require laravel/telescope');
 
-        if (!$this->checkIfMigrationExists()) {
+        if (! $this->checkIfMigrationExists()) {
             $this->call('telescope:install');
         } else {
             $this->warn('⚠️ Telescope migration already exists. Skipping create migration step.');
@@ -26,6 +26,6 @@ class TelescopeHandler extends Command
         $migrationsPath = database_path('migrations');
         $pattern = '*_create_telescope_entries_table.php';
 
-        return count(File::glob($migrationsPath . '/' . $pattern));
+        return count(File::glob($migrationsPath.'/'.$pattern));
     }
 }

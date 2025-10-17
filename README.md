@@ -57,6 +57,7 @@ public function panel(Panel $panel): Panel
  ->plugins([
             FilamentApexChartsPlugin::make(),
              AuthUIEnhancerPlugin::make(),
+              EasyFooterPlugin::make(),
         ]);
 ```
 
@@ -64,6 +65,7 @@ public function panel(Panel $panel): Panel
 
 ```php
  @source '../../../../vendor/diogogpinto/filament-auth-ui-enhancer/resources/**/*.blade.php';
+ @source '../../../../vendor/devonab/filament-easy-footer/resources/views!**!*'
 ```
 
 ## Testing

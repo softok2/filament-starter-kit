@@ -56,8 +56,23 @@ public function panel(Panel $panel): Panel
 ```php
  ->plugins([
             FilamentApexChartsPlugin::make(),
-             AuthUIEnhancerPlugin::make(),
-              EasyFooterPlugin::make(),
+             AuthUIEnhancerPlugin::make()
+                    ->showEmptyPanelOnMobile(false)
+                    ->formPanelPosition()
+                    ->formPanelWidth('35%')
+                    ->emptyPanelBackgroundImageOpacity('50%')
+                    ->emptyPanelBackgroundImageUrl('https://public.solicy.net/21/How_to_Develop_a_Mobile_App_9212b1648e.webp'),
+                ResizedColumnPlugin::make(),
+                EasyFooterPlugin::make()
+                    ->withLogo(
+                        Vite::asset('resources/images/softok2_logo.png'),
+                        'https://softok2.com',
+                        'Desarrollado por',
+                    )
+                    ->withLinks([
+                        ['title' => '+20 años de soluciones digitales', 'url' => 'https://softok2.com'],
+                    ])
+                    ->withBorder(),
         ]);
 ```
 
@@ -67,6 +82,17 @@ public function panel(Panel $panel): Panel
  @source '../../../../vendor/diogogpinto/filament-auth-ui-enhancer/resources/**/*.blade.php';
  @source '../../../../vendor/devonab/filament-easy-footer/resources/views!**!*'
 ```
+
+5. Finally, in your AppServiceProvider, add the following to register the sidebar toggle hook:
+
+```php
+FilamentView::registerRenderHook(
+    PanelsRenderHook::SIDEBAR_LOGO_AFTER,
+    fn (): string => view('filament.hooks.sidebar-toggle')->render()
+);
+ ```      
+
+
 
 ## Testing
 

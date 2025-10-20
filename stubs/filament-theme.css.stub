@@ -1,0 +1,148 @@
+@import '../../../../vendor/filament/filament/resources/css/theme.css';
+@source '../../../../app/Filament/**/*';
+@source '../../../../resources/views/filament/**/*';
+@source '../../../../resources/views/livewire/**/*';
+
+
+:root {
+    font-size: 14px;
+}
+
+.filament {
+    font-size: 0.875rem;
+}
+
+.fi-main {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    max-width: 75rem;
+}
+
+@media (min-width: 1440px) {
+    .fi-main {
+        max-width: 100rem;
+    }
+}
+
+@media (min-width: 1920px) {
+    .fi-main {
+        max-width: 110rem;
+    }
+}
+
+/*.fi-simple-header > .fi-logo{
+   // @apply hidden;
+}*/
+
+
+.fi-main-ctn{
+    @apply bg-slate-100 dark:bg-zinc-800;
+}
+
+.fi-topbar {
+    @apply dark:bg-gray-950;
+}
+
+.fi-sidebar {
+    @apply bg-gradient-to-t from-gray-50 via-gray-100 to-gray-200 dark:bg-gradient-to-r dark:from-zinc-700 dark:via-zinc-800 dark:to-zinc-900 ;
+}
+
+.fi-sidebar-close-collapse-sidebar-btn,
+.fi-sidebar-open-collapse-sidebar-btn {
+ /*   @apply hidden;*/
+}
+
+.fi-btn {
+    @apply rounded-xl;
+}
+
+.fi-input-wrp{
+    @apply rounded-xl;
+}
+
+.fi-ta-ctn{
+    @apply rounded-xl;
+}
+
+td.fi-ta-cell {
+    @apply dark:bg-zinc-800;
+}
+
+.fi-badge {
+    @apply rounded-lg;
+}
+
+.fi-avatar{
+    @apply ring-1 ring-zinc-400/40;
+}
+
+
+/* SIDEBAR STYLES */
+
+
+
+.fi-sidebar-item-label {
+    @apply text-sm text-lime-800 dark:text-lime-300;
+}
+.fi-sidebar-item-icon {
+    @apply w-5 h-5 text-lime-800 dark:text-lime-300;
+}
+
+.fi-sidebar-item-btn {
+    @apply p-1.5
+}
+
+.fi-sidebar-item.fi-active .fi-sidebar-item-btn {
+    @apply bg-lime-500 dark:bg-lime-800;
+}
+
+.fi-sidebar-item.fi-active .fi-sidebar-item-btn:hover{
+    @apply bg-lime-700 dark:bg-lime-900;
+}
+
+.fi-sidebar-item.fi-active .fi-sidebar-item-btn:hover .fi-sidebar-item-label{
+    @apply text-lime-300;
+}
+
+.fi-sidebar-item.fi-active .fi-sidebar-item-btn:hover .fi-sidebar-item-icon{
+    @apply text-lime-300;
+}
+
+.fi-sidebar-item-active .fi-sidebar-item-label {
+    @apply  font-extrabold text-lime-600;
+}
+
+.fi-sidebar-item-btn:hover {
+    @apply bg-lime-500 dark:bg-lime-800 dark:text-lime-300 text-lime-600;
+}
+
+.fi-sidebar-item-btn:hover .fi-sidebar-item-label, .fi-sidebar-item-btn:hover .fi-sidebar-item-icon {
+    @apply font-extrabold;
+}
+
+.fi-sidebar-footer:hover
+{
+    @apply bg-gray-200 dark:bg-gray-800  rounded-xl;
+}
+
+
+/* FOOTER STYLES */
+
+.fi-footer {
+    @apply text-xs p-1 my-1 ;
+}
+
+.fi-footer > span,
+.fi-footer > ul {
+    @apply px-3 text-center;
+}
+
+.fi-footer > span:first-child {
+    @apply border-r border-gray-200 dark:border-gray-700;
+}
+
+.fi-footer > span:nth-child(2) {
+    @apply border-r border-gray-200 dark:border-gray-700;
+}
+
+

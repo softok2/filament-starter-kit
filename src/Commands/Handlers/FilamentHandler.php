@@ -20,6 +20,7 @@ class FilamentHandler extends Command
             $this->copyTheme();
         } catch (FileNotFoundException $e) {
             $this->error('❌ Failed to copy custom theme: '.$e->getMessage());
+
             return;
         }
 

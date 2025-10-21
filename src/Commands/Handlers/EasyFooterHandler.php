@@ -15,9 +15,6 @@ class EasyFooterHandler extends Command
         $this->info('✅ Easy Footer installed successfully.');
     }
 
-
-    /**
-     */
     private function copyLogo(): void
     {
         $logoPath = dirname(__DIR__, 3).'/resources/images/softok2_logo.png';
@@ -26,15 +23,15 @@ class EasyFooterHandler extends Command
         $targetPath = $targetDir.'/softok2_logo.png';
 
         // Ensure the destination directory exists
-        if(!File::isDirectory($targetDir)){
+        if (! File::isDirectory($targetDir)) {
             File::makeDirectory($targetDir, 0755, true);
         }
 
         if (! File::exists($targetPath)) {
             File::copy($logoPath, $targetPath);
-            $this->info('✅ ' . $targetPath. ' copiada correctamente! ');
+            $this->info('✅ '.$targetPath.' copiada correctamente! ');
         } else {
-            $this->warn('⚠️ ' . $targetPath. ' ya existe, se omitió la copia.');
+            $this->warn('⚠️ '.$targetPath.' ya existe, se omitió la copia.');
         }
     }
 }

@@ -14,7 +14,6 @@ use Softok2\FilamentStarterKit\Commands\Handlers\PintHandler;
 use Softok2\FilamentStarterKit\Commands\Handlers\PrettierHandler;
 use Softok2\FilamentStarterKit\Commands\Handlers\SpatieMediaLibraryHandler;
 use Softok2\FilamentStarterKit\Commands\Handlers\TelescopeHandler;
-use Spatie\LaravelPackageTools\Commands\InstallCommand;
 
 class FilamentStarterKitCommand extends Command
 {
@@ -49,5 +48,4 @@ class FilamentStarterKitCommand extends Command
 
         return self::SUCCESS;
     }
-
 }

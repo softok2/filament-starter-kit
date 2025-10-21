@@ -3,6 +3,9 @@
 @source '../../../../resources/views/filament/**/*';
 @source '../../../../resources/views/livewire/**/*';
 
+ @source '../../../../vendor/diogogpinto/filament-auth-ui-enhancer/resources/**/*.blade.php';
+ @source '../../../../vendor/devonab/filament-easy-footer/resources/views!**!*';
+ @source '../../../../vendor/softok2/filament-starter-kit/resources/**/*.blade.php';
 
 :root {
     font-size: 14px;
@@ -49,7 +52,7 @@
 
 .fi-sidebar-close-collapse-sidebar-btn,
 .fi-sidebar-open-collapse-sidebar-btn {
- /*   @apply hidden;*/
+    @apply hidden;
 }
 
 .fi-btn {

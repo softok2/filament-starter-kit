@@ -47,7 +47,9 @@ public function panel(Panel $panel): Panel
 {
     return $panel
         // ...
-        ->viteTheme('resources/css/filament/admin/theme.css');
+        ->viteTheme('resources/css/filament/admin/theme.css')
+        ->sidebarCollapsibleOnDesktop()
+        ->topbar(false);
 }
 ```
 
@@ -62,7 +64,6 @@ public function panel(Panel $panel): Panel
                     ->formPanelWidth('35%')
                     ->emptyPanelBackgroundImageOpacity('50%')
                     ->emptyPanelBackgroundImageUrl('https://public.solicy.net/21/How_to_Develop_a_Mobile_App_9212b1648e.webp'),
-                ResizedColumnPlugin::make(),
                 EasyFooterPlugin::make()
                     ->withLogo(
                         Vite::asset('resources/images/softok2_logo.png'),
@@ -76,11 +77,13 @@ public function panel(Panel $panel): Panel
         ]);
 ```
 
-4. Add the following to your `theme.css` file
+4. Add the following to your `app.js` file to process static assets with vite:
 
-```php
- @source '../../../../vendor/diogogpinto/filament-auth-ui-enhancer/resources/**/*.blade.php';
- @source '../../../../vendor/devonab/filament-easy-footer/resources/views!**!*'
+```bash
+import.meta.glob([
+    '../images/**',
+    '../fonts/**',
+]);
 ```
 
 5. Finally, in your AppServiceProvider, add the following to register the sidebar toggle hook:
@@ -97,8 +100,6 @@ public function boot(): void
     );
 }
  ```      
-
-
 
 ## Testing
 

@@ -40,8 +40,6 @@ class FilamentStarterKitCommand extends Command
     {
         $this->output->info('Starting Filament Starter Kit installation...');
 
-        $this->handleDefualtInstallationSteps();
-
         foreach ($this->handlers as $handler) {
             $this->call($handler);
             $this->newLine();
@@ -52,7 +50,4 @@ class FilamentStarterKitCommand extends Command
         return self::SUCCESS;
     }
 
-    private function handleDefualtInstallationSteps(): void{
-        (new InstallCommand())
-    }
 }

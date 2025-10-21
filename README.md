@@ -86,10 +86,16 @@ public function panel(Panel $panel): Panel
 5. Finally, in your AppServiceProvider, add the following to register the sidebar toggle hook:
 
 ```php
-FilamentView::registerRenderHook(
-    PanelsRenderHook::SIDEBAR_LOGO_AFTER,
-    fn (): string => view('filament.hooks.sidebar-toggle')->render()
-);
+use Filament\Support\Facades\FilamentView;
+use Filament\View\PanelsRenderHook;
+
+public function boot(): void
+{
+    FilamentView::registerRenderHook(
+        PanelsRenderHook::SIDEBAR_LOGO_AFTER,
+        fn (): string => view('filament-starter-kit::hooks.sidebar-toggle')->render()
+    );
+}
  ```      
 
 

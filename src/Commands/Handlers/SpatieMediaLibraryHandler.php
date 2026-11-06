@@ -10,7 +10,7 @@ class SpatieMediaLibraryHandler extends Command
     {
         // Installing filament spatie media library and Publishing the config file
         $this->comment('Installing spatie media library and Publishing the config file...');
-        exec('composer require filament/spatie-laravel-media-library-plugin:"^4.0" -W');
+        exec('composer require filament/spatie-laravel-media-library-plugin:"^5.0" -W');
         $this->call('vendor:publish', [
             '--provider' => "Spatie\MediaLibrary\MediaLibraryServiceProvider",
             '--tag' => 'medialibrary-migrations',

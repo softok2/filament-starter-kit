@@ -12,7 +12,7 @@ class FilamentHandler extends Command
     {
         // Installing filament panels + custom theme
         $this->comment('Installing Filament Panels + Custom Theme...');
-        exec('composer require filament/filament:"^4.0"');
+        exec('composer require filament/filament:"^5.0"');
         $this->call('filament:install', ['--panels' => true]);
         $this->call('make:filament-theme');
 
